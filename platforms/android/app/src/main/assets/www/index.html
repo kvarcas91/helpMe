@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="utf-8"> 
+       
+        <meta name="format-detection" content="telephone=yes">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="bs/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/floating_labels.css">
+
+        <title>Help Me</title>
+
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Register
+                        </div>
+                        <div class="panel-body">
+                            <form id="form">
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control">
+                            </div>
+
+                           
+
+                            <hr>
+                            <div class="form-group">
+                                <button type="button" id="send" class="btn btn-default">Send</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+      
+        <script type="text/javascript">
+        $("#send").click(function()
+        {
+            var form =$("#form").serialize();
+
+            console.log(form);
+
+            $.post("http://localhost/app/index.php", form, function(response)
+            {
+                alert(response);
+            })
+        })
+        </script>
+    </body>
+</html>
