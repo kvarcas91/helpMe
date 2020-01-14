@@ -39,7 +39,7 @@
 
                             <hr>
                             <div class="form-group">
-                                <button type="button" id="send" class="btn btn-default">Send</button>
+                                <button type="button" id="send" class="btn btn-primary btn-block">Register</button>
                             </div>
                         </form>
                         </div>
@@ -48,20 +48,21 @@
             </div>
         </div>
 
+        
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
       
         <script type="text/javascript">
         $("#send").click(function()
         {
-            var form =$("#form").serialize();
+            //var form =$("#form").serialize();
+            window.location = "AddHand.html";
+            //console.log(form);
 
-            console.log(form);
-
-            $.post("http://localhost/app/index.php", form, function(response)
-            {
-                alert(response);
-            })
+            //$.post("http://localhost/app/index.php", form, function(response)
+            //{
+                //alert(response);
+            //})
         })
         </script>
     </body>
