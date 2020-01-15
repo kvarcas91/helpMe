@@ -88,7 +88,12 @@ function initializeSelection()
     //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), items));
     console.log(selectedItem);
-    
+    if (selectedItem != null) {
+      //console.log(selectedItem);
+    window.localStorage.setItem("add",selectedItem);
+    console.log(localStorage.getItem("add"));
+   // window.location = "adds.html";
+    }
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());
      
