@@ -172,25 +172,28 @@ header{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.adds {
+.items {
   background-color: dodgerblue;
   width:auto;
-  height:100px;
+  height:150px;
   color: black;
   margin: 20px;
   padding: 20px;
-  overflow:hidden;
+  overflow:scroll;
   border-left:groove;
   border-bottom: ridge;
 }
-.adds:hover {
+.items:hover {
     color:white;
 
 }
-.adddes {
+.price{
+    float:right;
+}
+#items {
   background-color: dodgerblue;
   width:auto;
-  height:200px;
+  height:auto;
   color: black;
   margin: 20px;
   padding: 20px;
@@ -206,8 +209,14 @@ header{
   font-size: 30px;
   cursor: pointer;
 }
-
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color:#f1f1f1 ;
+.about {
+    background-color: dodgerblue;
+    width: auto;
+    height: 150px;
+    color: black;
+    margin: 20px;
+    padding: 20px;
+    overflow: scroll;
+    border-left: groove;
+    border-bottom: ridge;
 }
