@@ -43,12 +43,6 @@ $("#loginBtn").click(function(e){
         success : function(result){
             switch (result.data)
             {
-                case ('no_user'):
-                    $('#errorLbl').text('Email not found, please register');
-                    break;
-                case ('wrong_password'):
-                    $('#errorLbl').text('Incorrect password');
-                    break;
                 case ('login_verified'):
                     // param (key, value)
                     localStorage.setItem("userID", "");
@@ -56,6 +50,7 @@ $("#loginBtn").click(function(e){
                     window.location = 'main.html';
                     break;
                 default:
+                    $('#errorLbl').text('Incorrect email or password');
                     alert(JSON.stringify(result));
             }}
     });
