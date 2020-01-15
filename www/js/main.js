@@ -83,8 +83,9 @@ function initializeSelection()
     if (selectedItem != null) {
       //console.log(selectedItem);
     //window.localStorage.setItem("add",selectedItem);
-    console.log(localStorage.getItem("add"));
-   window.location = "adds.html";
+      localStorage.setItem("add", JSON.stringify(selectedItem));
+      //console.log("are this one??? " + localStorage.getItem("add"));
+      window.location = "adds.html";
     }
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());
