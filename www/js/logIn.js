@@ -50,6 +50,9 @@ $("#loginBtn").click(function(e){
                     $('#errorLbl').text('Incorrect password');
                     break;
                 case ('login_verified'):
+                    // param (key, value)
+                    localStorage.setItem("userID", "");
+                    alert("userID: " + "");
                     window.location = 'main.html';
                     break;
                 default:
