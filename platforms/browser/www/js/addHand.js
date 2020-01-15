@@ -19,7 +19,8 @@ $("#addHand").click(function()
      if (canProceed) 
      {
         addHand(($("#category")).val(), ($("#title")).val(), ($("#price")).val(), ($("#location")).val(), ($("#dueDate")).val(), ($("#description")).val());
-     }
+        window.location = "MyAdds.html";
+    }
 })
 
 
@@ -28,8 +29,13 @@ function IsEmpty (param)
     var isEmpty = false;
     if ($.trim(param.val()) == "") 
     {
+        $(param).css({"border-color": "red"});
         param.val("");
         isEmpty = true;
+    }
+    else 
+    {
+        $(param).css({"border-color": "#DCDCDC"});
     }
     console.log("IsEmpty (param - " + param.val() + "): " + isEmpty + ";");
     return isEmpty;
@@ -40,9 +46,13 @@ function IsCorrectPrice (param)
     var isCorrect = true;
     if (isNaN(param.val())) 
         {
-           
+            $(param).css({"border-color": "red"});
             alert("Incorrect price format");
             isCorrect = false;
+        }
+        else 
+        {
+            $(param).css({"border-color": "#DCDCDC"})
         }
         console.log("isCorrect (param - " + param.val() + "): " + isCorrect + ";");
         return isCorrect;
