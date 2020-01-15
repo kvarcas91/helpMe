@@ -10,14 +10,6 @@ function closeNav() {
 function goBack() {
     window.history.back();
 }
-var myitems = [{ name: 'a', lname: 'b' }, { name: 'c', lname: 'd' }]
-function populate() {
-    alert('function works');
-    for (var i = 0; i < myitems.length; i++) {
-        $("#items").append('<div class = "items"> <h2>' + myitems[i].name + '</h2><p>' + myitems[i].lname + '</p>');
-    }
-
-}
 
 $(document).ready(function()
 {
@@ -90,9 +82,9 @@ function initializeSelection()
     console.log(selectedItem);
     if (selectedItem != null) {
       //console.log(selectedItem);
-    window.localStorage.setItem("add",selectedItem);
+    //window.localStorage.setItem("add",selectedItem);
     console.log(localStorage.getItem("add"));
-   // window.location = "adds.html";
+   window.location = "adds.html";
     }
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());
