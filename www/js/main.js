@@ -88,6 +88,7 @@ function initializeSelection()
     //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), items));
     console.log(selectedItem);
+    
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());
      
