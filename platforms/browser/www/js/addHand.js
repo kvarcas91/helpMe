@@ -4,6 +4,7 @@ $(document).ready(function()
             {
                 dateFormat: 'yy-mm-dd'
             }).datepicker('setDate', new Date());
+            $('#price').val("0");
     })
 
 
@@ -90,6 +91,7 @@ function validateTemp()
 } 
 
 function addHand (c, t, p, l, date, descr) {
+    if (p == null) p = 0;
     var hand = 
     {
         category : c,

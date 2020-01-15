@@ -18,52 +18,126 @@
     </head>
     <body>
         
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Register
+        
+
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+
+            <!-- Login tab -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab"
+            style="margin-left: auto;
+            margin-right: auto; position: absolute; top: 20%; width: 100%;">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-3">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form action="" id="form">
+
+                                       
+                                    <div class="form-group">
+                                        <label for="email">Email address</label>
+                                        <input type="email" name="email" class="form-control" placeholder="email@email.co.uk">
+                                    </div>
+        
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" class="form-control" placeholder="********">
+                                    </div>
+        
+
+                                    <button type="button" id="loginbtn" class="btn btn-primary btn-block">Login</button>
+                                    
+                                </form>
+
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <form id="form">
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control">
-                            </div>
+                    </div>
+                </div>
 
-                            <div class="form-group">
-                                <input type="password" name="password" class="form-control">
-                            </div>
 
-                           
+            </div>
 
-                            <hr>
-                            <div class="form-group">
-                                <button type="button" id="send" class="btn btn-primary btn-block">Register</button>
+            <!-- Register tab -->
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab"
+            style="margin-left: auto;
+            margin-right: auto; position: absolute; top: 5%; width: 100%;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-3">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form action="" id="registerForm">
+
+                                        <!-- FirstName -->
+                                    <div class="form-group">
+                                        <label for="firstName">First Name*</label>
+                                        <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                                    </div>
+        
+                                    <!-- LastName -->
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name*</label>
+                                        <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                                    </div>
+
+                                    <!-- email -->
+                                    <div class="form-group">
+                                        <label for="email">Email address*</label>
+                                        <input type="email" name="email" class="form-control" placeholder="email@study.beds.ac.uk">
+                                    </div>
+
+                                    <!-- username -->
+                                    <div class="form-group">
+                                        <label for="username">Username*</label>
+                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                    </div>
+
+                                     <!-- password -->
+                                     <div class="form-group">
+                                        <label for="password">Password*</label>
+                                        <input type="password" name="password" class="form-control" placeholder="********">
+                                    </div>
+
+                                    <!-- phone -->
+                                    <div class="form-group">
+                                        <label for="username">Phone number*</label>
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone number">
+                                    </div>
+        
+
+                                    <button type="button" id="registerbtn" class="btn btn-primary btn-block">Register</button>
+                                    
+                                </form>
+
+                                </div>
                             </div>
-                        </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+          </div>
+
 
         
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
         <script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
-      
-        <script type="text/javascript">
-        $("#send").click(function()
-        {
-            //var form =$("#form").serialize();
-            window.location = "AddHand.html";
-            //console.log(form);
 
-            //$.post("http://localhost/app/index.php", form, function(response)
-            //{
-                //alert(response);
-            //})
-        })
-        </script>
+        <script type="text/javascript" src="js/index.js"></script>
+      
+       
     </body>
 </html>
