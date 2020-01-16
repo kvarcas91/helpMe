@@ -31,6 +31,8 @@ $(document).ready(function()
 
 $("#loginBtn").click(function(e){
 
+test();
+
     var email = $('#emailField').val();
     var password = $('#passwordField').val();
     e.preventDefault();
@@ -61,3 +63,8 @@ $("#loginBtn").click(function(e){
             }}
     });
 });
+
+function test ()
+{
+    window.location = 'main.html';
+}
