@@ -19,18 +19,5 @@ function goBack() {
 $("#claim").click(function()
 {
     
-    window.plugins.CallNumber.callNumber(onSuccess, onError, 'tel:07956339711', false);
-    //window.location = "main.html";
+    window.location = "main.html";
 })
-
-function onSuccess(result){
-
-    alert(result);
-    
-    }
-    
-    function onError(result) {
-    
-        alert(result);
-    
-    }

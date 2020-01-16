@@ -7,31 +7,13 @@ module.exports = [
         "clobbers": [
             "call"
         ]
-    },
-    {
-        "file": "plugins/call-number/www/CallNumber.js",
-        "id": "call-number.CallNumber",
-        "pluginId": "call-number",
-        "clobbers": [
-            "call"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-os-call-number/www/CallNumber.js",
-        "id": "cordova-plugin-os-call-number.CallNumber",
-        "pluginId": "cordova-plugin-os-call-number",
-        "clobbers": [
-            "call"
-        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.3.4",
-    "mx.ferreyra.callnumber": "0.0.2",
-    "call-number": "1.0.4",
-    "cordova-plugin-os-call-number": "1.0.2"
+    "mx.ferreyra.callnumber": "0.0.2"
 }
 // BOTTOM OF METADATA
 });

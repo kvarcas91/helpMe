@@ -25,12 +25,12 @@ $("#claim").click(function()
 
 function onSuccess(result){
 
-    console.log(result);
+    alert(result);
     
     }
     
     function onError(result) {
     
-    console.log(result);
+        alert(result);
     
     }
