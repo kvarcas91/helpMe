@@ -16,6 +16,7 @@ $(document).ready(function()
     getData();
     initializeUI();
     initializeSelection();
+    console.log("userID: " + localStorage.getItem("userID"));
 })
 
 function getData () 
