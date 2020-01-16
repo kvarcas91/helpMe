@@ -41,17 +41,23 @@ $("#loginBtn").click(function(e){
         cache : false,
         type : 'GET',
         success : function(result){
-            switch (result.data)
+            //alert('the result was' + result.data[0]);
+            switch (result.data[0])
             {
                 case ('login_verified'):
-                    // param (key, value)
-                    localStorage.setItem("userID", "");
-                    alert("userID: " + "");
+                    var userID = result.data[1];
+                    localStorage.setItem("userID", userID);
+                    //alert("userID: " + userID);
                     window.location = 'main.html';
                     break;
+                case ('no_user'):
+                    $('#errorLbl').text('No user found, please register');
+                    break;
+                case ('wrong_password'):
+                    $('#errorLbl').text('Incorrect password');
+                    break;
                 default:
-                    $('#errorLbl').text('Incorrect email or password');
-                    alert(JSON.stringify(result));
+                    $('#errorLbl').text(result);
             }}
     });
 });
