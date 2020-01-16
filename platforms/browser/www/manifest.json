@@ -4,7 +4,7 @@
   "name": "helpme",
   "short_name": "helpme",
   "version": "com.team18.helpme",
-  "description": "A lovely app for healping each others",
+  "description": "A lovely app for helping each other",
   "author": "Apache Cordova Team",
   "icons": [],
   "start_url": "index.html"

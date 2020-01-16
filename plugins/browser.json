@@ -15,6 +15,9 @@
     },
     "call-number": {
       "PACKAGE_NAME": "com.team18.helpme"
+    },
+    "cordova-plugin-os-call-number": {
+      "PACKAGE_NAME": "com.team18.helpme"
     }
   },
   "dependent_plugins": {}

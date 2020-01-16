@@ -15,11 +15,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "call"
       ]
+    },
+    {
+      "id": "cordova-plugin-os-call-number.CallNumber",
+      "file": "plugins/cordova-plugin-os-call-number/www/CallNumber.js",
+      "pluginId": "cordova-plugin-os-call-number",
+      "clobbers": [
+        "call"
+      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-whitelist": "1.3.4",
     "mx.ferreyra.callnumber": "0.0.2",
-    "call-number": "1.0.4"
+    "call-number": "1.0.4",
+    "cordova-plugin-os-call-number": "1.0.2"
   };
 });
