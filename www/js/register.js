@@ -107,7 +107,7 @@ $("#registerbtn").click(function()
     // Validate password match
     if (match($("#password"), $("#vpassword")) == false) 
     {
-        firstnameErr = "Passwords doesn't match";
+        firstnameErr = "Passwords don't match";
     }
     else 
     {
