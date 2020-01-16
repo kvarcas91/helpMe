@@ -10,20 +10,13 @@ function closeNav() {
 function goBack() {
     window.history.back();
 }
-var myitems = [{ name: 'a', lname: 'b' }, { name: 'c', lname: 'd' }]
-function populate() {
-    alert('function works');
-    for (var i = 0; i < myitems.length; i++) {
-        $("#items").append('<div class = "items"> <h2>' + myitems[i].name + '</h2><p>' + myitems[i].lname + '</p>');
-    }
-
-}
 
 $(document).ready(function()
 {
     getData();
     initializeUI();
     initializeSelection();
+    console.log("userID: " + localStorage.getItem("userID"));
 })
 
 function getData () 
@@ -88,7 +81,13 @@ function initializeSelection()
     //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), items));
     console.log(selectedItem);
-    
+    if (selectedItem != null) {
+      //console.log(selectedItem);
+    //window.localStorage.setItem("add",selectedItem);
+      localStorage.setItem("add", JSON.stringify(selectedItem));
+      //console.log("are this one??? " + localStorage.getItem("add"));
+      window.location = "adds.html";
+    }
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());
      

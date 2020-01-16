@@ -27,26 +27,3 @@ app.initialize();
 
 
 
-$("#loginbtn").click(function()
-    {
-        //var form =$("#form").serialize();
-        window.location = "main.html";
-        //console.log(form);
-
-        //$.post("http://localhost/app/index.php", form, function(response)
-        //{
-            //alert(response);
-        //})
-    })
-
-$("#registerbtn").click(function()
-{
-    //var form =$("#form").serialize();
-    window.location = "main.html";
-    //console.log(form);
-
-    //$.post("http://localhost/app/index.php", form, function(response)
-    //{
-        //alert(response);
-    //})
-})

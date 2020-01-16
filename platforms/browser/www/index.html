@@ -11,7 +11,7 @@
         
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="bs/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/floating_labels.css">
+       
 
         <title>Help Me</title>
 
@@ -42,19 +42,24 @@
                                 <div class="panel-body">
                                     <form action="" id="form">
 
-                                       
                                     <div class="form-group">
                                         <label for="email">Email address</label>
-                                        <input type="email" name="email" class="form-control" placeholder="email@email.co.uk">
+                                        <input  id = "emailField" type="email" name="email" class="form-control" placeholder="email@email.co.uk">
                                     </div>
         
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="********">
+                                        <input id = "passwordField" type="password" name="password" class="form-control" placeholder="********">
+                                        
                                     </div>
-        
+                                    
+                                    <div class="form-group">
+                                    <small id = "errorLbl"  style="color: red;">
+                                       
+                                      </small>
+                                    </div>
 
-                                    <button type="button" id="loginbtn" class="btn btn-primary btn-block">Login</button>
+                                    <button type="button" id="loginBtn" class="btn btn-primary btn-block">Login</button>
                                     
                                 </form>
 
@@ -70,48 +75,72 @@
             <!-- Register tab -->
             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab"
             style="margin-left: auto;
-            margin-right: auto; position: absolute; top: 5%; width: 100%;">
+            margin-right: auto; position: absolute; top: 10%; width: 100%;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-3">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <form action="" id="registerForm">
+                                    <form action="" id="registerForm" class="needs-validation" novalidate>
+
+                                        <div class="form-group">
+                                            <small>
+                                               Fields with (*) are required.
+                                              </small>
+                                             </div>
 
                                         <!-- FirstName -->
                                     <div class="form-group">
                                         <label for="firstName">First Name*</label>
-                                        <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                                        <input type="text" id="firstName" class="form-control" placeholder="First Name">
+                                        <small style="color: red;" id="firstNameValidation"> </small>
                                     </div>
         
                                     <!-- LastName -->
                                     <div class="form-group">
                                         <label for="lastName">Last Name*</label>
-                                        <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                                        <input type="text" id="lastName" class="form-control" placeholder="Last Name">
+                                        <small style="color: red;" id="lastNameValidation"> </small>
                                     </div>
 
                                     <!-- email -->
                                     <div class="form-group">
                                         <label for="email">Email address*</label>
-                                        <input type="email" name="email" class="form-control" placeholder="email@study.beds.ac.uk">
+                                        <input type="email" id="email" class="form-control" placeholder="email@study.beds.ac.uk">
+                                        <small style="color: red;" id="emailValidation"> </small>
                                     </div>
 
                                     <!-- username -->
                                     <div class="form-group">
                                         <label for="username">Username*</label>
-                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                        <input type="text" id="username" class="form-control" placeholder="Username">
+                                        <small style="color: red;" id="usernameValidation"> </small>
                                     </div>
 
                                      <!-- password -->
                                      <div class="form-group">
                                         <label for="password">Password*</label>
-                                        <input type="password" name="password" class="form-control" placeholder="********">
+                                        <input type="password" id="password" class="form-control" placeholder="********">
+                                        <small style="color: red;" id="passwordValidation"> </small>
+                                    </div>
+
+                                     <!-- password -->
+                                     <div class="form-group">
+                                        <label for="password">Verify password*</label>
+                                        <input type="password" id="vpassword" class="form-control" placeholder="********">
+                                        <small style="color: red;" id="vpasswordValidation"> </small>
                                     </div>
 
                                     <!-- phone -->
                                     <div class="form-group">
-                                        <label for="username">Phone number*</label>
-                                        <input type="text" name="phone" class="form-control" placeholder="Phone number">
+                                        <label for="username">Phone number</label>
+                                        <input type="text" id="phone" class="form-control" placeholder="Phone number">
+                                    </div>
+
+                                    <!-- address -->
+                                    <div class="form-group">
+                                        <label for="username">Address</label>
+                                        <input type="text" id="address" class="form-control" placeholder="Address">
                                     </div>
         
 
@@ -132,11 +161,12 @@
         
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">-->
         <script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/logIn.js"></script>
+        <script type="text/javascript" src="js/register.js"></script>
       
        
     </body>
