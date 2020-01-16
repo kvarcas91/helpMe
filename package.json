@@ -1,8 +1,8 @@
 {
   "name": "com.team18.helpme",
   "displayName": "helpme",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "version": "1.0.1",
+  "description": "Lovely app for helping each others",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,10 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "Apache Cordova Team",
+  "author": "Team18",
   "license": "Apache-2.0",
   "dependencies": {
-    "call-number": "^1.0.1",
+    "call-number": "git+https://github.com/Rohfosho/CordovaCallNumberPlugin.git",
     "cordova-android": "^8.1.0"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "mx.ferreyra.callnumber": {}
+      "call-number": {}
     },
     "platforms": [
       "android"

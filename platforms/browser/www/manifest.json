@@ -4,7 +4,7 @@
   "name": "helpme",
   "short_name": "helpme",
   "version": "com.team18.helpme",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "A lovely app for healping each others",
   "author": "Apache Cordova Team",
   "icons": [],
   "start_url": "index.html"

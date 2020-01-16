@@ -12,6 +12,9 @@
     },
     "mx.ferreyra.callnumber": {
       "PACKAGE_NAME": "com.team18.helpme"
+    },
+    "call-number": {
+      "PACKAGE_NAME": "com.team18.helpme"
     }
   },
   "dependent_plugins": {}

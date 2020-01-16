@@ -31,7 +31,7 @@ $(document).ready(function()
 
 $("#loginBtn").click(function(e){
 
-test();
+
 
     var email = $('#emailField').val();
     var password = $('#passwordField').val();
@@ -63,8 +63,3 @@ test();
             }}
     });
 });
-
-function test ()
-{
-    window.location = 'main.html';
-}

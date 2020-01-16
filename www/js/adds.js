@@ -19,7 +19,7 @@ function goBack() {
 $("#claim").click(function()
 {
     
-    window.plugins.CallNumber.callNumber(onSuccess, onError, '07956339711', true);
+    window.plugins.CallNumber.callNumber(onSuccess, onError, 'tel:07956339711', false);
     //window.location = "main.html";
 })
 

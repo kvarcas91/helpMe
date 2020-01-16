@@ -31,6 +31,8 @@ $(document).ready(function()
 
 $("#loginBtn").click(function(e){
 
+
+
     var email = $('#emailField').val();
     var password = $('#passwordField').val();
     e.preventDefault();

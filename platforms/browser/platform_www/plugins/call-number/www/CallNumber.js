@@ -1,4 +1,4 @@
-var CallNumber = function(){};
+cordova.define("call-number.CallNumber", function(require, exports, module) { var CallNumber = function(){};
 
 CallNumber.prototype.callNumber = function(success, failure, number, bypassAppChooser){
     cordova.exec(success, failure, "CallNumber", "callNumber", [number, bypassAppChooser]);
@@ -17,4 +17,6 @@ cordova.addConstructor(function() {
 
     if(!window.plugins) window.plugins = {};
     window.plugins.CallNumber = new CallNumber();
+});
+
 });
