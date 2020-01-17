@@ -30,9 +30,6 @@ $(document).ready(function()
 //Method for onclick event (no code or reference needed in HTML)
 
 $("#loginBtn").click(function(e){
-
-
-
     var email = $('#emailField').val();
     var password = $('#passwordField').val();
     e.preventDefault();
