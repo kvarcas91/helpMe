@@ -213,6 +213,7 @@ function addNewUser(arr)
                     resolve(result.response);
                     $('#spinner').hide();
                     alert('user added');
+                    $('.nav-tabs a:first').tab('show')
                 }
             })
         }
