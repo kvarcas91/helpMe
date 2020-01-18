@@ -155,6 +155,7 @@ function isEmailCorrect (param)
 function isFieldUnique (column,txtfield)
 {
 
+    var errorlbl = (column== 'email')? $('#emailValidation') : $('#usernameValidation');
     var value = txtfield.val();
     return new Promise(function(resolve,reject){
         $.ajax({
@@ -167,7 +168,12 @@ function isFieldUnique (column,txtfield)
         error : function(error){reject(error);},
         success : function(result)
         {
-            //console.log('result: '+ JSON.stringify(result));
+        
+            if(!(result.data === 'valid'))
+            {
+                errorlbl.text(column + ' already in use!');
+                txtfield.css({"border-color": "red"});
+            }
             resolve(result.data === 'valid');
             $('#spinner').hide();
 
