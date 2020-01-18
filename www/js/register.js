@@ -179,7 +179,8 @@ function isFieldUnique (column,txtfield)
 $('#registerbtn').click(function(e){
     e.preventDefault();
     Promise.all([validateFields(),isFieldUnique('username',$('#username')),isFieldUnique('email',$('#email'))])
-    .then(values => addNewUser(values),error=>console.log(error)).then(success=> console.log(success),error => console.log(error));
+    .then(values => addNewUser(values),error=>console.log(error))
+    .then(success=> console.log(success),error => console.log(error));
 })
 
 function addNewUser(arr)

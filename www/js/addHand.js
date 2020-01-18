@@ -1,11 +1,38 @@
 $(document).ready(function() 
-    {
-        $('#dueDate').datepicker(
+{
+  $(document).ajaxError(function(e, xhr, opt){
+        var errStatus;
+        switch (xhr.status) {
+            case 0:
+                errStatus = "###### Not connect. Verify Network. #####";
+                break;
+            case 404:
+                errStatus = "###### Requested page not found. [404] #####";
+                break;
+            case 500:
+                errStatus = "###### Internal Server Error [500] #####";
+                break;
+            default:
+                errStatus=  "###### Unknown Error!! #####"
+        }
+
+        console.log("Error requesting:  "
+            + opt.url + "\n Status: "
+            + errStatus + "\n Status Text: "
+            + xhr.statusText+ "\n Element id: "
+            +e.currentTarget.activeElement['id']);
+
+          
+   })
+  $('#dueDate').datepicker(
             {
                 dateFormat: 'yy-mm-dd'
             }).datepicker('setDate', new Date());
             $('#price').val("0");
-    })
+
+});
+
+
 
 
 $("#addHand").click(function()
@@ -19,8 +46,20 @@ $("#addHand").click(function()
 
      if (canProceed) 
      {
-        addHand(($("#category")).val(), ($("#title")).val(), ($("#price")).val(), ($("#location")).val(), ($("#dueDate")).val(), ($("#description")).val());
-        window.location = "MyAdds.html";
+        if($('#price').val() == '') {$('#price').val(0);}
+        var hand = {
+            //user_ID : LocaleStorage.getItem('userID'),
+            user_ID : 5,
+            cat_ID : $('#category').val(),
+            title : $("#title").val().replace("'","''"),
+            description : $("#description").val().replace("'","''"),
+            price : $("#price").val(),
+            deadline : $("#dueDate").val(),
+            location : $("#location").val().replace("'","''")
+        };
+        addHand(hand)
+            .then(success => {alert('New ad was created!'); window.location = 'MyAdds.html';},
+                error => {alert(error); $('#spinner').hide();});
     }
 })
 
@@ -90,17 +129,18 @@ function validateTemp()
     }
 } 
 
-function addHand (c, t, p, l, date, descr) {
-    if (p == null) p = 0;
-    var hand = 
-    {
-        category : c,
-        title : t,
-        price : p,
-        location : l,
-        dueDate : date,
-        description : descr
-    };
-    console.log(hand);
-    //alert(hand.title);
+function addHand (hand) {
+   
+    return new Promise(function(resolve,reject){
+        $.ajax({
+            url : 'https://dam-valley.000webhostapp.com/addAdAPI.php',
+            data : hand,
+            datatype : 'json',
+            type : 'POST',
+            cache : false,
+            beforeSend: function(){$('#spinner').show();},
+            error: function(error){reject(error.responseText);console.log('error ' +error.responseText);},
+            success: function(success){resolve(success.response);console.log('sucess ' +success.response);} 
+        })
+    })
 }
