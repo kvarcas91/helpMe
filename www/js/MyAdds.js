@@ -12,9 +12,35 @@ function getDataById(id, dataModel)
 
 $(document).ready(function()
 {
-    getData();
-    initializeMyAdds();
-    initializeSelection();
+$(document).ajaxError(function(e, xhr, opt){
+        var errStatus;
+        switch (xhr.status) {
+            case 0:
+                errStatus = "###### Not connect. Verify Network. #####";
+                break;
+            case 404:
+                errStatus = "###### Requested page not found. [404] #####";
+                break;
+            case 500:
+                errStatus = "###### Internal Server Error [500] #####";
+                break;
+            default:
+                errStatus=  "###### Unknown Error!! #####"
+        }
+
+        console.log("Error requesting:  "
+            + opt.url + "\n Status: "
+            + errStatus + "\n Status Text: "
+            + xhr.statusText+ "\n Element id: "
+            +e.currentTarget.activeElement['id']);
+
+   })
+
+    getData().then(success=> {console.log(success); data = success[0]; 
+                                    claimedData = success[1];
+                                    initializeMyAdds();
+                                    initializeSelection();},
+      error=> alert(JSON.stringify(error)));
 })
 
 
@@ -22,18 +48,18 @@ function initializeMyAdds ()
 {
   $('#myAddList').empty();
 
-    //console.log(myString);
+    console.log(data + claimedData);
     $.each(data, function(key,value) {
        
         $('#myAddList').append(
-            '<div data-id="'+value.ID+'">' +
+            '<div data-id="'+value.ad_ID+'">' +
             '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
                 '<div class="d-flex w-100 justify-content-between">' +
-                  '<h5 class="mb-1 title">'+value.Title+ '</h5>' +
-                  '<small>'+ value.DueDate +'</small>' +
+                  '<h5 class="mb-1 title">'+value.title+ '</h5>' +
+                  '<small>'+ value.deadline +'</small>' +
                 '</div>' +
-                '<p class="mb-1">'+ value.Description +'</p>' +
-                '<small>'+ value.Location +'</small>' +
+                '<p class="mb-1">'+ value.description +'</p>' +
+                '<small>'+ value.location +'</small>' +
               '</a></div>'
             );
       }); 
@@ -44,14 +70,14 @@ function initializeMyAdds ()
     $.each(claimedData, function(key,value) {
        
         $('#myClaimList').append(
-            '<div data-id="'+value.ID+'">' +
+            '<div data-id="'+value.ad_ID+'">' +
             '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
                 '<div class="d-flex w-100 justify-content-between">' +
-                  '<h5 class="mb-1 title">'+value.Title+ '</h5>' +
-                  '<small>'+ value.DueDate +'</small>' +
+                  '<h5 class="mb-1 title">'+value.title+ '</h5>' +
+                  '<small>'+ value.deadline +'</small>' +
                 '</div>' +
-                '<p class="mb-1">'+ value.Description +'</p>' +
-                '<small>'+ value.Location +'</small>' +
+                '<p class="mb-1">'+ value.description +'</p>' +
+                '<small>'+ value.location +'</small>' +
               '</a></div>'
             );
       }); 
@@ -90,36 +116,23 @@ function initializeSelection()
   });
 }
 
-function getData() 
+function getData () 
 {
-  var allAdds = new Object();
-    
-  var first = new Object();
-  first.ID = 1;
-  first.Location = "Luton";
-  first.Title = "some lovely title";
-  first.Description = "nice and long description";
-  first.DueDate = "2020-01-25";
-
-  var second = new Object();
-  second.ID = 2;
-  second.Location = "London";
-  second.Title = "some lovely title";
-  second.Description = "nice and long description";
-  second.DueDate = "2020-01-23";
-
-  var third = new Object();
-  third.ID = 3;
-  third.Location = "Manchester";
-  third.Title = "some lovely title claimed";
-  third.Description = "nice and long description";
-  third.DueDate = "2020-01-23";
-
-  allAdds = [first, second];
-  var myString = JSON.stringify(allAdds);
-  data = jQuery.parseJSON(myString);
-
-  var allClaimed = [third];
-  var myString2 = JSON.stringify(allClaimed);
-  claimedData = jQuery.parseJSON(myString2);
+    console.log('getting data');
+    var userID = window.localStorage.getItem('userID');
+    console.log(userID);
+    return new Promise(function(resolve,reject){
+      $.ajax({
+        url : 'https://dam-valley.000webhostapp.com/MyAddsClaimsAPI.php',
+        data : {'view_ads' : 1,'userID' : userID},
+        datatype : 'json',
+        type : 'GET',
+        cache : false,
+        error : function(error){console.log('error ' + error);reject(error);},
+        success : function(result){console.log('result ' + result.data[1]);resolve(result.data);}
+      })
+      //console.log('we are here');
+      $('#spinner').hide();
+      $('#spinner2').hide();
+    })
 }
