@@ -131,10 +131,6 @@ header{
   margin-bottom: 10px;
 }
 
-.notification-menu .avatar {
-  padding: 2px 0;
-}
-
 .notification-menu h3 {
   font-size: 15px;
   margin: 0 0 5px 0;
@@ -146,32 +142,6 @@ header{
   font-size: 14px;
 }
 
-.post {
-  background-color: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 2px 3px rgba(0,0,0,.1);
-}
-
-.post .avatar {
-  padding-right: 10px;
-  padding-bottom: 5px;
-}
-
-.post h3 {
-  font-size: 16px;
-  margin-top: 0;
-  display: inline;
-}
-
-.post p {
-  font-size: 14px;
-}
-
-.post p + img {
-  width: 100%;
-  margin-bottom: 15px;
-}
 @keyframes bell {
   0% { transform: rotate(0); }
   10% { transform: rotate(30deg); }
