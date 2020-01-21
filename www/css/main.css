@@ -251,13 +251,11 @@ header{
   cursor: pointer;
 }
 .about {
-    background-color: dodgerblue;
+    background-color: white;
     width: auto;
     height: 150px;
     color: black;
     margin: 20px;
     padding: 20px;
-    overflow: scroll;
-    border-left: groove;
-    border-bottom: ridge;
+  
 }
