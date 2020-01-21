@@ -48,7 +48,8 @@ $("#addHand").click(function()
      {
         if($('#price').val() == '') {$('#price').val(0);}
         var hand = {
-            user_ID : LocaleStorage.getItem('userID'), //comment thisline out and uncomment the next one to run on browser
+            
+            user_ID : window.localStorage.getItem('userID'), //comment thisline out and uncomment the next one to run on browser
             //user_ID : 5
             cat_ID : $('#category').val(),
             title : $("#title").val().replace("'","''"),

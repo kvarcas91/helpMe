@@ -4,11 +4,11 @@ $(document).ready(function()
 {
     item = window.localStorage.getItem("add");
     var itemObj = JSON.parse(item);
-    console.log(itemObj.Title);
-    $("#title").text(itemObj.Title);
-    $("#description").text(itemObj.Description);
-    $("#dueDate").text("Due to " + itemObj.DueDate);
-    $("#location").text(itemObj.Location);
+    console.log("item: " + item);
+    $("#title").text(itemObj.title);
+    $("#description").text(itemObj.description);
+    $("#dueDate").text("Due to " + itemObj.deadline);
+    $("#location").text(itemObj.location);
    
 })
 

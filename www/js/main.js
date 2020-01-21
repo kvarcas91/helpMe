@@ -53,7 +53,7 @@ function getData ()
         error : function(error){reject(error);},
         success : function(result){resolve(result.data);}
       })
-      console.log('we are here');
+      //console.log('we are here');
       $('#spinner').hide();
     })
 }
@@ -64,13 +64,13 @@ function initializeUI ()
     $('#addListItems').empty();
     var color;
     $.each(items, function(key,value) {
-      console.log(value);
-        if(value.cat_ID==1){color = 'red';}
-        else if (value.cat_ID == 2){color = 'green';}
-        else {color = 'yellow';}
+      console.log("value: " + value);
+        //if(value.cat_ID==1){color = 'red';}
+        //else if (value.cat_ID == 2){color = 'green';}
+        //else {color = 'yellow';}
 
         $('#addListItems').append(
-            '<div data-id="'+value.ad_ID+' " style = "background-color :'+ color + ' ">' +
+            '<div data-id="'+value.ad_ID+'">' +
             '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
                 '<div class="d-flex w-100 justify-content-between">' +
                   '<h5 class="mb-1 title">'+value.title+ '</h5>' +
@@ -94,7 +94,7 @@ function initializeSelection()
     //console.log($(this).attr('data-title'));
     //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), items));
-    console.log(selectedItem);
+    console.log("selected item: " + selectedItem);
     if (selectedItem != null) {
       //console.log(selectedItem);
     //window.localStorage.setItem("add",selectedItem);
@@ -110,9 +110,17 @@ function initializeSelection()
 
 function getDataById(id, dataModel)
 {
-  console.log('ID as param: ' + id);
-  var __found = jQuery.grep(dataModel, function(n, i) {return id == n.ID;})
-  console.log(__found);
+  //console.log(JSON.stringify(dataModel));
+  //console.log('ID as param: ' + id);
+  //console.log("dataModel: " + dataModel);
+  var __found = jQuery.grep(dataModel, function(n, i) 
+  {
+    //console.log("getData: n ID: " + n.ad_ID + ";");
+    //console.log("id as param: " + id + ";");
+    //console.log("id == ad_ID: " + (id == n.ad_ID) + ";");
+    return id == n.ad_ID;
+  })
+  console.log("found: " + __found);
 
   return __found[0];
 }
