@@ -38,6 +38,11 @@ $(document).ready(function()
    })
     getData().then(success => {console.log(success);items = success; initializeUI(); initializeSelection();}, error => alert(JSON.stringify(error)));
     //console.log("userID: " + localStorage.getItem("userID"));
+
+    $("#bell").click(function() 
+{
+  $('.notification-menu').toggle(); 
+})
 })
 
 function getData () 
@@ -124,5 +129,7 @@ function getDataById(id, dataModel)
 
   return __found[0];
 }
+
+
 
 
