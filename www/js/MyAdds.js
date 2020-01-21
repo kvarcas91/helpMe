@@ -48,8 +48,10 @@ function initializeMyAdds ()
 {
   $('#myAddList').empty();
 
-    console.log(data + claimedData);
-    $.each(data, function(key,value) {
+  console.log(data + claimedData);
+  if(!(data=='empty'))
+  {
+     $.each(data, function(key,value) {
        
         $('#myAddList').append(
             '<div data-id="'+value.ad_ID+'">' +
@@ -63,10 +65,12 @@ function initializeMyAdds ()
               '</a></div>'
             );
       }); 
+  }
 
-      $('#myClaimList').empty();
+  $('#myClaimList').empty();
 
-    //console.log(myString);
+  if(!(claimedData=='empty'))
+  {  //console.log(myString);
     $.each(claimedData, function(key,value) {
        
         $('#myClaimList').append(
@@ -81,6 +85,7 @@ function initializeMyAdds ()
               '</a></div>'
             );
       }); 
+  }
 }
 
 function initializeSelection() 
