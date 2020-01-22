@@ -12,6 +12,11 @@
     },
     "mx.ferreyra.callnumber": {
       "PACKAGE_NAME": "com.team18.helpme"
+    },
+    "cordova-plugin-googlemaps": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.team18.helpme"
     }
   },
   "dependent_plugins": {}
