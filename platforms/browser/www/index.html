@@ -76,6 +76,7 @@
             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab"
             style="margin-left: auto;
             margin-right: auto; position: absolute; top: 10%; width: 100%;">
+
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-sm-3">
@@ -142,9 +143,14 @@
                                         <label for="username">Address</label>
                                         <input type="text" id="address" class="form-control" placeholder="Address">
                                     </div>
-        
+    
+                                   <div class="align-items-center text-primary" id="spinner" style = "display: none">
+                                         <strong id="spinner_txt">Loading...</strong>
+                                        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                                    </div>
 
                                     <button type="button" id="registerbtn" class="btn btn-primary btn-block">Register</button>
+
                                     
                                 </form>
 

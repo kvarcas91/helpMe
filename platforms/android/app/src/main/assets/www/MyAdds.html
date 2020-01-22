@@ -8,6 +8,8 @@
 
 
     <link rel="stylesheet" type="text/css" href="bs/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
    
     
     <head>
@@ -16,6 +18,30 @@
     </head>
     <body>
 
+      <header>
+        <nav class="menu">
+     <ul>
+        <li><a href="main.html" style="color: white;">HOME</a></li>
+     </ul>
+   </nav>
+  <div class="notification-box">
+    <span class="notification-count">5</span>
+    <div class="notification-bell">
+      <span class="bell-top"></span>
+      <span class="bell-middle"></span>
+      <span class="bell-bottom"></span>
+      <span class="bell-rad"></span>
+    </div>
+  </div>
+       <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html" >About</a>
+  <a href="MyAdds.html">My Adds</a>
+  <a href="AddHand.html">Add New</a>
+</div>
+
+<span style="font-size:28px; position:absolute; cursor:pointer" onclick="openNav()">&#9776;</span>
+    </header>
 
         <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
             <li class="nav-item">
@@ -30,6 +56,11 @@
 
             <!-- My Add Tab -->
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class=" flex-column align-items-center text-primary" style = "display: flex" id="spinner">
+                <strong id="spinner_txt">Loading Ads...</strong>
+                <strong id="spinner_txt">Please wait :)</strong>
+                <div class="spinner-border" role="status" aria-hidden="true"></div>
+              </div>
                
               <div class="list-group" id="myAddList">
                 
@@ -39,6 +70,11 @@
 
             <!-- My claims panel -->
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <div class=" flex-column align-items-center text-primary" style = "display: flex" id="spinner2">
+                <strong id="spinner_txt">Loading Ads...</strong>
+                <strong id="spinner_txt">Please wait :)</strong>
+                <div class="spinner-border" role="status" aria-hidden="true"></div>
+              </div>
                 
               <div class="list-group" id="myClaimList">
                 
@@ -57,7 +93,10 @@
        
          <script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
          
+         <script src="js/main.js"></script>
+
          <script type="text/javascript" src="js/MyAdds.js"></script>
+        
 
 
     </body>

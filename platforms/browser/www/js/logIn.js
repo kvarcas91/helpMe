@@ -30,9 +30,6 @@ $(document).ready(function()
 //Method for onclick event (no code or reference needed in HTML)
 
 $("#loginBtn").click(function(e){
-
-
-
     var email = $('#emailField').val();
     var password = $('#passwordField').val();
     e.preventDefault();
@@ -48,7 +45,7 @@ $("#loginBtn").click(function(e){
             {
                 case ('login_verified'):
                     var userID = result.data[1];
-                    localStorage.setItem("userID", userID);
+                    window.localStorage.setItem("userID", userID);
                     //alert("userID: " + userID);
                     window.location = 'main.html';
                     break;

@@ -4,11 +4,13 @@ $(document).ready(function()
 {
     item = window.localStorage.getItem("add");
     var itemObj = JSON.parse(item);
-    console.log(itemObj.Title);
-    $("#title").text(itemObj.Title);
-    $("#description").text(itemObj.Description);
-    $("#dueDate").text("Due to " + itemObj.DueDate);
-    $("#location").text(itemObj.Location);
+    console.log("item: " + item);
+    var tit_price = itemObj.title + " (£ " + itemObj.price + ")";
+    $("#title").text(tit_price);
+    $("#description").text(itemObj.description);
+    $("#dueDate").text("Due to " + itemObj.deadline);
+    
+    $("#location").text(itemObj.location);
    
 })
 
@@ -19,18 +21,5 @@ function goBack() {
 $("#claim").click(function()
 {
     
-    window.plugins.CallNumber.callNumber(onSuccess, onError, 'tel:07956339711', false);
-    //window.location = "main.html";
+    window.location = "main.html";
 })
-
-function onSuccess(result){
-
-    alert(result);
-    
-    }
-    
-    function onError(result) {
-    
-        alert(result);
-    
-    }
