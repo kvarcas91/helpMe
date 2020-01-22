@@ -74,11 +74,13 @@ function initializeUI ()
         //else if (value.cat_ID == 2){color = 'green';}
         //else {color = 'yellow';}
 
+        var tit_price = value.title + " (£ " + value.price + ")";
+
         $('#addListItems').append(
             '<div data-id="'+value.ad_ID+'">' +
             '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
                 '<div class="d-flex w-100 justify-content-between">' +
-                  '<h5 class="mb-1 title">'+value.title+ '</h5>' +
+                  '<h5 class="mb-1 title">'+tit_price+ '</h5>' +
                   '<small>'+ value.deadline +'</small>' +
                 '</div>' +
                 '<p class="mb-1">'+ value.description +'</p>' +
