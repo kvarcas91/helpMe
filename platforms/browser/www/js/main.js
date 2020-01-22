@@ -75,6 +75,11 @@ function initializeUI ()
         //else {color = 'yellow';}
 
         var tit_price = value.title + " (£ " + value.price + ")";
+        var descr = value.description;
+        if (descr.length > 50)
+        {
+          descr = descr.substring(0, 47) + "...";
+        }
 
         $('#addListItems').append(
             '<div data-id="'+value.ad_ID+'">' +
@@ -83,7 +88,7 @@ function initializeUI ()
                   '<h5 class="mb-1 title">'+tit_price+ '</h5>' +
                   '<small>'+ value.deadline +'</small>' +
                 '</div>' +
-                '<p class="mb-1">'+ value.description +'</p>' +
+                '<p class="mb-1">'+ descr +'</p>' +
                 '<small>'+ value.location +'</small>' +
               '</a></div>'
             );
