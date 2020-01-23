@@ -2,6 +2,7 @@ $(document).ready(function()
 {
     item = window.localStorage.getItem("selectedItem");
     var itemObj = JSON.parse(item);
+    var userID = itemObj.userID;
     var mPhoneNumber = "07958521464";
     console.log("item: " + item);
     

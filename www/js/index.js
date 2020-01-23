@@ -44,6 +44,7 @@ setTimeout(function ()
 
 function load ()
 {
+    window.localStorage.clear();
     $('#overlay').removeClass('open');
     setTimeout(function () 
 {
