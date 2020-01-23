@@ -149,7 +149,12 @@ function initializeSelection()
     //console.log($(this).attr('data-title'));
     //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), claimedData));
-    
+     if (selectedItem.status != "accepted") alert("Your offer wasn't aprooved yet");
+     else
+     {
+      window.localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
+      window.location = "ConfirmClaim.html";
+     }
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());
      
