@@ -98,6 +98,7 @@ function initializeUI ()
     }    
   }
 
+
 function initializeSelection() 
 {
   $("#addListItems div").click(function(e) {
