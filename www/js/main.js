@@ -76,7 +76,7 @@ function initializeUI ()
 
         var tit_price = value.title + " (£ " + value.price + ")";
         var descr = value.description;
-        if (descr.length > 50)
+        if (descr.Length > 50)
         {
           descr = descr.substring(0, 47) + "...";
         }

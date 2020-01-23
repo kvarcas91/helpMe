@@ -1,10 +1,22 @@
 var data;
 var claimedData;
 
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+function goBack() {
+  window.history.back();
+}
+
 function getDataById(id, dataModel)
 {
   console.log('ID as param: ' + id);
-  var __found = jQuery.grep(dataModel, function(n, i) {return id == n.ID;})
+  var __found = jQuery.grep(dataModel, function(n, i) {return id == n.ad_ID;})
   console.log(__found);
 
   return __found[0];
@@ -53,6 +65,8 @@ function initializeMyAdds ()
   {
      $.each(data, function(key,value) {
        
+      var status = "Status: " + value.status;
+
         $('#myAddList').append(
             '<div data-id="'+value.ad_ID+'">' +
             '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
@@ -62,7 +76,10 @@ function initializeMyAdds ()
                 '</div>' +
                 '<p class="mb-1">'+ value.description +'</p>' +
                 '<small>'+ value.location +'</small>' +
-              '</a></div>'
+                '<p>'+ status +'</p>' +  
+              '</a>' +
+              
+              '</div>'
             );
       }); 
   }
@@ -95,14 +112,12 @@ function initializeSelection()
     $(".list-group .list-group-item").removeClass("active");
     $(e.target).addClass("active");
 
-    //console.log($(this).attr('data-id'));
-    //console.log($(this).attr('data-title'));
-    //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), data));
-    
-      //var element = $('.mb-1 title');
-      //console.log("date "+element.text());
-     
+     if (selectedItem.status != "claimed") alert("No one has been offered a help");
+     else{
+      window.localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
+      window.location = "ConfirmClaim.html";
+     }
   });
 
   $("#myClaimList div").click(function(e) {
