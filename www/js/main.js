@@ -68,32 +68,38 @@ function initializeUI ()
 
     $('#addListItems').empty();
     var color;
-    $.each(items, function(key,value) {
-      console.log("value: " + value);
-        //if(value.cat_ID==1){color = 'red';}
-        //else if (value.cat_ID == 2){color = 'green';}
-        //else {color = 'yellow';}
 
-        var tit_price = value.title + " (£ " + value.price + ")";
-        var descr = value.description;
-        if (descr.Length > 50)
-        {
-          descr = descr.substring(0, 47) + "...";
-        }
 
-        $('#addListItems').append(
-            '<div data-id="'+value.ad_ID+'">' +
-            '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
-                '<div class="d-flex w-100 justify-content-between">' +
-                  '<h5 class="mb-1 title">'+tit_price+ '</h5>' +
-                  '<small>'+ value.deadline +'</small>' +
-                '</div>' +
-                '<p class="mb-1">'+ descr +'</p>' +
-                '<small>'+ value.location +'</small>' +
-              '</a></div>'
-            );
-      }); 
-}
+    if(!(items == 'no ads available'))
+    {
+      $.each(items, function(key,value) {
+        console.log("value: " + value);
+          //if(value.cat_ID==1){color = 'red';}
+          //else if (value.cat_ID == 2){color = 'green';}
+          //else {color = 'yellow';}
+
+          var tit_price = value.title + " (£ " + value.price + ")";
+          var descr = value.description;
+          if (descr.length > 50)
+          {
+            descr = descr.substring(0, 47) + "...";
+          }
+
+          $('#addListItems').append(
+              '<div data-id="'+value.ad_ID+'">' +
+              '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
+                  '<div class="d-flex w-100 justify-content-between">' +
+                    '<h5 class="mb-1 title">'+tit_price+ '</h5>' +
+                    '<small>'+ value.deadline +'</small>' +
+                  '</div>' +
+                  '<p class="mb-1">'+ descr +'</p>' +
+                  '<small>'+ value.location +'</small>' +
+                '</a></div>'
+              );
+        }); 
+    }    
+  }
+
 
 function initializeSelection() 
 {
