@@ -32,10 +32,6 @@ $(document).ready(function()
     itemObj = JSON.parse(item); 
     getClaimerInfo(itemObj).then(success=>{console.log(success);setUpPage(success)},error=>{alert(JSON.stringify(error));});
     
-    console.log("item: " + item);
-    
-    
-    
 })
 
 function setUpPage(data)
