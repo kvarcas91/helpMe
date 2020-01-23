@@ -1,5 +1,6 @@
 ﻿var items;
 
+// Navigation drawer
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
 }
@@ -36,7 +37,7 @@ $(document).ready(function()
             +e.currentTarget.activeElement['id']);
 
    })
-    getData().then(success => {console.log(success);items = success; initializeUI(); initializeSelection();}, error => alert(JSON.stringify(error)));
+    getData().then(success => {console.log("success: " + success);items = success; initializeUI(); initializeSelection();}, error => alert(JSON.stringify(error)));
     console.log("userID: " + localStorage.getItem("userID"));
 
     $("#bell").click(function() 
@@ -67,14 +68,11 @@ function initializeUI ()
 {
 
     $('#addListItems').empty();
-    var color;
+    console.log(items);
     if(!(items == 'no ads available'))
     {
       $.each(items, function(key,value) {
         console.log("value: " + value);
-          //if(value.cat_ID==1){color = 'red';}
-          //else if (value.cat_ID == 2){color = 'green';}
-          //else {color = 'yellow';}
 
           var tit_price = value.title + " (£ " + value.price + ")";
           var descr = value.description;
@@ -106,34 +104,23 @@ function initializeSelection()
     $(".list-group .list-group-item").removeClass("active");
     $(e.target).addClass("active");
 
-    //console.log($(this).attr('data-id'));
-    //console.log($(this).attr('data-title'));
-    //console.log($(this).attr('data-location'));
      var selectedItem = (getDataById($(this).attr('data-id'), items));
     console.log("selected item: " + selectedItem);
     if (selectedItem != null) {
-      //console.log(selectedItem);
-    //window.localStorage.setItem("add",selectedItem);
+     
       localStorage.setItem("add", JSON.stringify(selectedItem));
-      //console.log("are this one??? " + localStorage.getItem("add"));
       window.location = "adds.html";
     }
-      //var element = $('.mb-1 title');
-      //console.log("date "+element.text());
      
   });
 }
 
 function getDataById(id, dataModel)
 {
-  //console.log(JSON.stringify(dataModel));
-  //console.log('ID as param: ' + id);
-  //console.log("dataModel: " + dataModel);
+ 
   var __found = jQuery.grep(dataModel, function(n, i) 
   {
-    //console.log("getData: n ID: " + n.ad_ID + ";");
-    //console.log("id as param: " + id + ";");
-    //console.log("id == ad_ID: " + (id == n.ad_ID) + ";");
+  
     return id == n.ad_ID;
   })
   console.log("found: " + __found);

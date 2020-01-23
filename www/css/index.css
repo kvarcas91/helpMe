@@ -138,7 +138,7 @@ h1 {
   }
   #site {
     
-  
+    transition: visibility 1.4s, opacity 0.4s;
     /* While it's hidden */
     visibility: hidden;
     opacity: 0;
