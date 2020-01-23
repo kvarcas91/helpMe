@@ -70,6 +70,7 @@ function initializeUI ()
     var color;
 
 
+
     if(!(items == 'no ads available'))
     {
       $.each(items, function(key,value) {
@@ -99,6 +100,7 @@ function initializeUI ()
         }); 
     }    
   }
+
 
 
 function initializeSelection() 
