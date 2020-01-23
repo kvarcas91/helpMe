@@ -68,9 +68,6 @@ function initializeUI ()
 
     $('#addListItems').empty();
     var color;
-
-
-
     if(!(items == 'no ads available'))
     {
       $.each(items, function(key,value) {
@@ -100,8 +97,6 @@ function initializeUI ()
         }); 
     }    
   }
-
-
 
 function initializeSelection() 
 {
