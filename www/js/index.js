@@ -1,4 +1,5 @@
 
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -24,6 +25,33 @@ var app = {
 };
 
 app.initialize();
+
+var timer = 0; //setting this up as global
+
+$(document).ready( function () {
+
+      /* Showing the overlay */
+$('#overlay').addClass('open');
+$('#site').addClass('closed');
+
+setTimeout(function () 
+{
+  /* Hiding the overlay */
+  load();
+}, 2000);
+
+});
+
+function load ()
+{
+    $('#overlay').removeClass('open');
+    setTimeout(function () 
+{
+  /* Hiding the overlay */
+  $('#site').removeClass('closed');
+}, 500);
+}
+
 
 
 

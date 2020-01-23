@@ -16,10 +16,10 @@ function goBack() {
 function getDataById(id, dataModel)
 {
   console.log('ID as param: ' + id);
-  var __found = jQuery.grep(dataModel, function(n, i) {return id == n.ad_ID;})
-  console.log(__found);
+  var found = jQuery.grep(dataModel, function(n, i) {return id == n.ad_ID;})
+  console.log(found);
 
-  return __found[0];
+  return found[0];
 }
 
 $(document).ready(function()
@@ -92,21 +92,21 @@ function initializeMyAdds ()
        
       var status = "Status: " + value.status;
       var status_class = "";
-      if (status == "accepted")
+      if (value.status == "accepted")
       {
         status_class = "btn-success";
       }
-      else if (status = "claimed")
+      else if (value.status == "claimed")
       {
         status_class = "btn-secondary";
       }
-      else if (status ="rejected")
+      else if (value.status == "rejected")
       {
         status_class = "btn-danger";
       }
       else 
       {
-
+        status_class = "btn-primary";
       }
 
         $('#myClaimList').append(
@@ -153,7 +153,7 @@ function initializeSelection()
      else
      {
       window.localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
-      window.location = "ConfirmClaim.html";
+      window.location = "AcceptClaim.html";
      }
       //var element = $('.mb-1 title');
       //console.log("date "+element.text());

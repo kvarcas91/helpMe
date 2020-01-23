@@ -104,3 +104,48 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#overlay {
+    /* Display overlay in fullscreen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  
+    /* Center it's content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Add nice animation */
+    transition: visibility 1.0s, opacity 0.4s;
+  
+    /* While it's hidden */
+    visibility: hidden;
+    opacity: 0;
+  }
+  #overlay.open {
+    /* While it's shown */
+    visibility: visible;
+    opacity: 1;
+  }
+  #overlay img {
+    /* Styling image */
+    display: block;
+    width: 128px;
+    height: auto;
+  }
+  #site {
+    
+  
+    /* While it's hidden */
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #site.closed {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+  }
