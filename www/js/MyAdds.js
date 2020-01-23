@@ -133,7 +133,7 @@ function initializeSelection()
     $(e.target).addClass("active");
 
      var selectedItem = (getDataById($(this).attr('data-id'), data));
-     if (selectedItem.status != "claimed") alert("No one has been offered a help");
+     if (selectedItem.status != "claimed") alert("No one has been offered to help");
      else{
       window.localStorage.setItem("selectedItem", JSON.stringify(selectedItem));
       window.location = "ConfirmClaim.html";
