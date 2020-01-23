@@ -133,19 +133,19 @@ h1 {
   #overlay img {
     /* Styling image */
     display: block;
-    width: 128px;
+    width: 256px;
     height: auto;
   }
   #site {
     
   
     /* While it's hidden */
-    visibility: visible;
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
   }
 
-  #site.closed {
-      display: none;
-      visibility: hidden;
-      opacity: 0;
+  #site.open {
+      display: block;
+      visibility: visible;
+      opacity: 1;
   }

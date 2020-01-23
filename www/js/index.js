@@ -32,7 +32,7 @@ $(document).ready( function () {
 
       /* Showing the overlay */
 $('#overlay').addClass('open');
-$('#site').addClass('closed');
+
 
 setTimeout(function () 
 {
@@ -48,7 +48,7 @@ function load ()
     setTimeout(function () 
 {
   /* Hiding the overlay */
-  $('#site').removeClass('closed');
+  $('#site').addClass('open');
 }, 500);
 }
 
