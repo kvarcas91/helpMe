@@ -1,11 +1,1 @@
-{
-  "background_color": "#FFF",
-  "display": "standalone",
-  "name": "helpme",
-  "short_name": "helpme",
-  "version": "com.team18.helpme",
-  "description": "A lovely app for helping each other",
-  "author": "Apache Cordova Team",
-  "icons": [],
-  "start_url": "index.html"
-}
+{"background_color":"#FFF","display":"standalone","name":"helpme","short_name":"helpme","version":"com.team18.helpme","description":"A lovely app for helping each other","author":"Apache Cordova Team","icons":[],"start_url":"index.html","gcm_sender_id":"996231231186"}
