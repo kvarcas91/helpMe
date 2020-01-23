@@ -90,6 +90,25 @@ function initializeMyAdds ()
   {  //console.log(myString);
     $.each(claimedData, function(key,value) {
        
+      var status = "Status: " + value.status;
+      var status_class = "";
+      if (status == "accepted")
+      {
+        status_class = "btn-success";
+      }
+      else if (status = "claimed")
+      {
+        status_class = "btn-secondary";
+      }
+      else if (status ="rejected")
+      {
+        status_class = "btn-danger";
+      }
+      else 
+      {
+
+      }
+
         $('#myClaimList').append(
             '<div data-id="'+value.ad_ID+'">' +
             '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">' +
@@ -99,6 +118,7 @@ function initializeMyAdds ()
                 '</div>' +
                 '<p class="mb-1">'+ value.description +'</p>' +
                 '<small>'+ value.location +'</small>' +
+                '<button class="btn btn-block '+ status_class +'" disabled>'+ status +'</button>' +  
               '</a></div>'
             );
       }); 
