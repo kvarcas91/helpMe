@@ -48,10 +48,11 @@ $(document).ready(function()
 
 function getData () 
 {
+    var userID = window.localStorage.getItem('userID');
     return new Promise(function(resolve,reject){
       $.ajax({
         url : 'https://dam-valley.000webhostapp.com/mainAPI.php',
-        data : {'all_ads' : 1},
+        data : {'all_ads' : userID},
         datatype : 'json',
         type : 'GET',
         cache : false,
