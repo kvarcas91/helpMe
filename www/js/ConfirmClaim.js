@@ -1,5 +1,6 @@
 var URL = 'https://dam-valley.000webhostapp.com/acceptClaimAPI.php';
 var itemObj;
+var claimer_ID;
 
 $(document).ready(function()
 {
@@ -25,7 +26,6 @@ $(document).ready(function()
             +e.currentTarget.activeElement['id']);
         alert(errStatus);
         
-
    })
 
     item = window.localStorage.getItem("selectedItem");
@@ -41,6 +41,7 @@ function setUpPage(data)
     username = data.username;
     var offer = "User '" + username + "' has offered to help. Please fill form bellow to accept it";
     $("#offer").text(offer);
+    claimer_ID = data.user_ID;
 }
 
 $("#reject").click(function()
@@ -54,7 +55,7 @@ $("#confirm").click(function()
     if(validateFields())
     {
         updateClaim(1).then(success=>{window.localStorage.removeItem("selectedItem");
-               },error=>alert(JSON.stringify(error)));
+               window.location = "MyAdds.html";},error=>alert(JSON.stringify(error)));
     }
 })
 
@@ -70,11 +71,10 @@ function validateFields()
 
 function getClaimerInfo(obj)
 {
-    var user_ID = obj.user_ID;
     return new Promise(function(resolve,reject){
         $.ajax({
             url : URL,
-            data : {'user_info' : user_ID},
+            data : {'claimer_username' : obj.ad_ID,'user_phone' : obj.user_ID},
             datatype : 'json',
             type : 'GET',
             cache : false,
@@ -87,13 +87,12 @@ function getClaimerInfo(obj)
 function updateClaim(int)
 {
     var info = $('#c_info').val();
-    var userID = window.localStorage.getItem('userID');
     var adID = itemObj.ad_ID;
-    console.log(int + 'inf0: '+ info + ' user: ' + userID + ' ad: ' + adID);
+    console.log(int + 'inf0: '+ info + ' user: ' + claimer_ID + ' ad: ' + adID);
     return new Promise(function(resolve,reject){
         $.ajax({
             url : URL,
-            data : {'update_claim' : int, 'contact_info' : info, 'user_ID' : userID, 'ad_ID' : adID},
+            data : {'update_claim' : int, 'contact_info' : info, 'user_ID' : claimer_ID, 'ad_ID' : adID},
             datatype : 'json',
             type : 'POST',
             cache : false,
