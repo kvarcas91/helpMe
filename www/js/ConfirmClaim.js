@@ -87,7 +87,7 @@ function getClaimerInfo(obj)
 function updateClaim(int)
 {
     var info = $('#c_info').val();
-    var phone = $('#phone'),val();
+    var phone = $('#phone').val();
     var adID = itemObj.ad_ID;
     console.log(int + 'inf0: '+ info + ' user: ' + claimer_ID + ' ad: ' + adID);
     return new Promise(function(resolve,reject){
